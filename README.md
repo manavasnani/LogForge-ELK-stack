@@ -1,4 +1,4 @@
-Project Overview
+## Project Overview
 Project Name: LogForge: Threat Monitoring with ELK Stack
 LogForge is a lightweight, Docker-based environment for simulating and analyzing cyber threats using the ELK stack (Elasticsearch, Logstash, and Kibana). The project is designed to help with understanding, monitoring, and visualizing log-based threats using MITRE ATT&CK mappings and provides a visual SIEM-like experience.
 

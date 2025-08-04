@@ -40,26 +40,26 @@ Finally, Kibana connects to Elasticsearch and offers a GUI to search logs, build
 
 ## Directory Structure
 .<br>
-├── config/
-    └── mitre_mapping.yaml
-├── Logs/
-    └── Cloud
-    └── Linux
-    └── Windows
-├── attacks/
-    └── cloud_iam_misuse.py
-    └── linux_brute_force.py
-    └── powershell_exec.py
-    └── port_scan.py
-    └── ssh_failures.py
-├── elk/
-    └── docker-compose.yml
-    └── logstash.conf
-├── utils/
-    └── formatter.py
-    └── writer.py
-└── main.py
-└── README.md
+├── config/<br>
+    └── mitre_mapping.yaml<br>
+├── Logs/<br>
+    └── Cloud<br>
+    └── Linux<br>
+    └── Windows<br>
+├── attacks/<br>
+    └── cloud_iam_misuse.py<br>
+    └── linux_brute_force.py<br>
+    └── powershell_exec.py<br>
+    └── port_scan.py<br>
+    └── ssh_failures.py<br>
+├── elk/<br>
+    └── docker-compose.yml<br>
+    └── logstash.conf<br>
+├── utils/<br>
+    └── formatter.py<br>
+    └── writer.py<br>
+└── main.py<br>
+└── README.md<br>
 
 # Setup 
 ## Prerequisites

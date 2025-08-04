@@ -4,7 +4,6 @@ LogForge is a lightweight, Docker-based environment for simulating and analyzing
 
 ## Purpose
 The goal of this project is to:
-
 - Simulate threat activity and ingest logs (e.g., from Filebeat or simulated sources).
 - Parse and enrich logs using Logstash with custom filters.
 - Index and store data efficiently in Elasticsearch for querying and correlation.
@@ -26,7 +25,7 @@ The goal of this project is to:
 This project follows a modular pipeline architecture to simulate log ingestion, enrichment, indexing, and visualization using the ELK Stack. The flow is designed to mimic real-world SIEM data processing pipelines.
 1. Log Generation
 Custom scripts or security event simulators generate sample log data (e.g., SSH access logs, failed logins, command execution, malware artifacts). These logs can be written to a file continuously or dumped in batch.
-2. Filebeat (Optional)
+2. Filebeat
 Filebeat acts as the lightweight log shipper agent. It monitors specific log files and forwards them to Logstash in real time. It’s configured using a filebeat.yml file which specifies input paths and output settings.
 3. Logstash
 Logstash ingests the incoming logs and processes them using defined grok patterns and filters (configured in logstash.conf).
@@ -38,6 +37,29 @@ It performs:
 Logstash then forwards the structured data to Elasticsearch, which stores and indexes it for fast querying and correlation. The logs are stored in indices like logstash-*.
 5. Kibana
 Finally, Kibana connects to Elasticsearch and offers a GUI to search logs, build dashboards, and set up alerts or visualizations. Security dashboards and MITRE-tagged events can be explored here.
+
+## Directory Structure
+.
+├── config/
+    └── mitre_mapping.yaml
+├── Logs/
+    └── Cloud
+    └── Linux
+    └── Windows
+├── attacks/
+    └── cloud_iam_misuse.py
+    └── linux_brute_force.py
+    └── powershell_exec.py
+    └── port_scan.py
+    └── ssh_failures.py
+├── elk/
+    └── docker-compose.yml
+    └── logstash.conf
+├── utils/
+    └── formatter.py
+    └── writer.py
+└── main.py
+└── README.md
 
 # Setup 
 ## Prerequisites
@@ -53,7 +75,7 @@ Finally, Kibana connects to Elasticsearch and offers a GUI to search logs, build
 Clone this repository and run "docker-compose up -d --build" in the repo directory. Once the containers are up and running, access kibana at http://localhost:5601 and verify if everything is running properly. 
 
 # Logstash & Filebeat Configuration
-In this phase, I focused on setting up the Logstash & Filebeat pipeline to correctly ingest & forward simulated log data generated from various attack scenarios. My goal was to ensure that each type of attack log could be parsed accurately, tagged appropriately, and enriched with MITRE ATT&CK mappings before being forwarded to Elasticsearch.
+After the initial installation, I focused on setting up the Logstash & Filebeat pipeline to correctly ingest & forward simulated log data generated from various attack scenarios. My goal was to ensure that each type of attack log could be parsed accurately, tagged appropriately, and enriched with MITRE ATT&CK mappings before being forwarded to Elasticsearch.
 
 ## Filtering & Tagging Each Attack Type
 To handle different types of attack logs, I created conditional filters in the logstash.conf file. Each filter block parses logs specific to one type of attack and adds a unique attack_type tag for identification.
@@ -96,10 +118,11 @@ In the Filebeat configuration file (filebeat.yml), I defined multiple input path
 
 I configured the output to forward all logs to Logstash rather than directly to Elasticsearch to allow for additional enrichment and parsing.
 
-Once logstash and filebeat were configured, and the all of the docker containers were up and running, my Kibana looked like this. 
+Once logstash and filebeat were configured, and all of the docker containers were up and running, my Kibana looked like this. 
 
 <img width="313" height="292" alt="Screenshot 2025-08-04 180954" src="https://github.com/user-attachments/assets/14cfcdf5-eec6-4611-b85d-6bfae9d2fc5b" />
 
 <img width="1552" height="629" alt="Screenshot 2025-08-04 180841" src="https://github.com/user-attachments/assets/9ef9d4ed-7eb5-4a81-9396-18cbfeed223a" />
 
+# Kibana Configuration & Visualizations
 

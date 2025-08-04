@@ -31,9 +31,9 @@ Filebeat acts as the lightweight log shipper agent. It monitors specific log fil
 3. Logstash
 Logstash ingests the incoming logs and processes them using defined grok patterns and filters (configured in logstash.conf).
 It performs:
-- Field extraction (timestamp, IP, command)
-- Enrichment (e.g., adding MITRE technique tags)
-- Normalization (parsing raw log formats into structured JSON)
+ - Field extraction (timestamp, IP, command)
+ - Enrichment (e.g., adding MITRE technique tags)
+ - Normalization (parsing raw log formats into structured JSON)
 4. Elasticsearch
 Logstash then forwards the structured data to Elasticsearch, which stores and indexes it for fast querying and correlation. The logs are stored in indices like logstash-*.
 5. Kibana

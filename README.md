@@ -39,7 +39,7 @@ Logstash then forwards the structured data to Elasticsearch, which stores and in
 Finally, Kibana connects to Elasticsearch and offers a GUI to search logs, build dashboards, and set up alerts or visualizations. Security dashboards and MITRE-tagged events can be explored here.
 
 ## Directory Structure
-.
+.\n
 ├── config/
     └── mitre_mapping.yaml
 ├── Logs/

@@ -43,9 +43,9 @@ Finally, Kibana connects to Elasticsearch and offers a GUI to search logs, build
 ├── config/<br>
       └── mitre_mapping.yaml<br>
 ├── Logs/<br>
-      └── Cloud<br>
-      └── Linux<br>
-      └── Windows<br>
+                                                                                                                                 └── Cloud<br>
+                                                                                                                                 └── Linux<br>
+                                                                                                                                 └── Windows<br>
 ├── attacks/<br>
       └── cloud_iam_misuse.py<br>
       └── linux_brute_force.py<br>

@@ -43,9 +43,9 @@ Finally, Kibana connects to Elasticsearch and offers a GUI to search logs, build
 ├── config/<br>
       └── mitre_mapping.yaml<br>
 ├── Logs/<br>
-                                                                                                                                 └── Cloud<br>
-                                                                                                                                 └── Linux<br>
-                                                                                                                                 └── Windows<br>
+      └── Cloud<br>
+      └── Linux<br>
+      └── Windows<br>
 ├── attacks/<br>
       └── cloud_iam_misuse.py<br>
       └── linux_brute_force.py<br>
@@ -125,4 +125,34 @@ Once logstash and filebeat were configured, and all of the docker containers wer
 <img width="1552" height="629" alt="Screenshot 2025-08-04 180841" src="https://github.com/user-attachments/assets/9ef9d4ed-7eb5-4a81-9396-18cbfeed223a" />
 
 # Kibana Configuration & Visualizations
+Once log ingestion was functional via Filebeat → Logstash → Elasticsearch, I moved on to setting up Kibana to analyze and visualize the attack patterns in real-time.
 
+1. MITRE Technique by Count (Bar Chart)
+This horizontal bar chart represents the top 5 most frequently triggered MITRE ATT&CK techniques in the dataset.
+   - Data Source: fields.mitre_technique.keyword
+   - Visualization Type: Bar chart (count aggregation)
+   - Purpose: Helps identify the most common adversary behaviors (e.g., lateral movement, command execution, credential dumping).
+
+2. Attack Frequency by Type (Donut Chart)
+This donut chart visualizes the distribution of attack types detected in the logs.
+   - Data Source: attack_type.keyword
+   - Visualization Type: Donut chart (terms aggregation)
+   - Purpose: Highlights the proportion of different attack behaviors across the dataset.
+
+<img width="1917" height="776" alt="Screenshot 2025-08-04 180910" src="https://github.com/user-attachments/assets/f551546f-a309-41e2-99ef-1111b8f66881" />
+
+# Future Enhancements
+## Alerts & Monitoring 
+One of the key goals for this project was to set up real-time alerting mechanisms within Kibana using Elastic Stack’s native capabilities (e.g., rule-based detection, action connectors, email/webhook integrations). However, this functionality has been postponed due to unresolved issues related to security configuration and encryption keys within Kibana.
+
+## Planned Next Steps:
+- Define the required encryption keys manually in kibana.yml
+- Implement proper user authentication and RBAC (Role-Based Access Control) to access the Security section and configure alert rules
+- Set up alert conditions based on:
+   - Thresholds for specific MITRE techniques
+   - Detection of repeated port scans or brute-force attempts
+   - Unusual spikes in specific log types
+- Use connectors like:
+   - Email notifications (via SMTP)
+   - Webhooks to external systems like Slack, Discord, or SIEMs
+Once the Kibana security issues are resolved, this will significantly enhance the automation and response capabilities of the LogForge stack.

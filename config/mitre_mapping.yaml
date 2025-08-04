@@ -1,0 +1,5 @@
+powershell_execution: T1059.001  # PowerShell - Command and Scripting Interpreter
+ssh_brute_force: T1110.001       # SSH Brute Force - Valid Accounts
+linux_brute_force: T1110         # Brute Force - Credential Access
+port_scanning: T1046             # Port Scanning - Network Service Discovery
+cloud_iam_misuse: T1078          # Valid Accounts - Cloud IAM Misuse

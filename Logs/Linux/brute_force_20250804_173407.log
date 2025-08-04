@@ -1,0 +1,13 @@
+{"timestamp": "2025-08-04T12:04:07.271253Z", "message": "2025-06-13T18:51:04.000000-04:00 kali sshd-session[23139]: Failed password for invalid user invaliduser from 127.0.0.1 port 55734 ssh2"}
+{"timestamp": "2025-08-04T12:04:07.271253Z", "message": "2025-06-13T18:51:09.000000-04:00 kali sshd-session[23139]: Failed password for invalid user invaliduser from 127.0.0.1 port 55734 ssh2"}
+{"timestamp": "2025-08-04T12:04:07.271253Z", "message": "2025-06-13T18:51:13.000000-04:00 kali sshd-session[23139]: Failed password for invalid user invaliduser from 127.0.0.1 port 55734 ssh2"}
+{"timestamp": "2025-08-04T12:04:07.271253Z", "message": "2025-06-13T18:51:18.000000-04:00 kali sshd-session[23747]: Failed password for invalid user invaliduser from 127.0.0.1 port 50556 ssh2"}
+{"timestamp": "2025-08-04T12:04:07.272266Z", "message": "2025-06-13T18:51:22.000000-04:00 kali sshd-session[23747]: Failed password for invalid user invaliduser from 127.0.0.1 port 50556 ssh2"}
+{"timestamp": "2025-08-04T12:04:07.272266Z", "message": "2025-06-13T18:51:26.000000-04:00 kali sshd-session[23747]: Failed password for invalid user invaliduser from 127.0.0.1 port 50556 ssh2"}
+{"timestamp": "2025-08-04T12:04:07.272266Z", "message": "2025-06-13T18:51:31.000000-04:00 kali sshd-session[23857]: Failed password for invalid user invaliduser from 127.0.0.1 port 49032 ssh2"}
+{"timestamp": "2025-08-04T12:04:07.272266Z", "message": "2025-06-13T18:51:36.000000-04:00 kali sshd-session[23857]: Failed password for invalid user invaliduser from 127.0.0.1 port 49032 ssh2"}
+{"timestamp": "2025-08-04T12:04:07.272266Z", "message": "2025-06-13T18:51:41.000000-04:00 kali sshd-session[23857]: Failed password for invalid user invaliduser from 127.0.0.1 port 49032 ssh2"}
+{"timestamp": "2025-08-04T12:04:07.272266Z", "message": "2025-06-13T18:51:47.000000-04:00 kali sshd-session[23989]: Failed password for invalid user invaliduser from 127.0.0.1 port 60146 ssh2"}
+{"timestamp": "2025-08-04T12:04:07.272266Z", "message": "2025-06-13T18:51:50.000000-04:00 kali sshd-session[23989]: Failed password for invalid user invaliduser from 127.0.0.1 port 60146 ssh2"}
+{"timestamp": "2025-08-04T12:04:07.272266Z", "message": "2025-06-13T18:51:54.000000-04:00 kali sshd-session[23989]: Failed password for invalid user invaliduser from 127.0.0.1 port 60146 ssh2"}
+{"timestamp": "2025-08-04T12:04:07.272266Z", "message": "2025-06-13T18:52:27.000000-04:00 kali sudo:     kali : TTY=pts/0 ; PWD=/home/kali/LogForge ; USER=root ; COMMAND=/usr/bin/grep 'Failed password' /var/log/auth.log"}

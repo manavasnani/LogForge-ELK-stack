@@ -146,7 +146,6 @@ This donut chart visualizes the distribution of attack types detected in the log
 One of the key goals for this project was to set up real-time alerting mechanisms within Kibana using Elastic Stack’s native capabilities (e.g., rule-based detection, action connectors, email/webhook integrations). However, this functionality has been postponed due to unresolved issues related to security configuration and encryption keys within Kibana.
 
 ## Planned Next Steps:
-- Define the required encryption keys manually in kibana.yml
 - Implement proper user authentication and RBAC (Role-Based Access Control) to access the Security section and configure alert rules
 - Set up alert conditions based on:
    - Thresholds for specific MITRE techniques

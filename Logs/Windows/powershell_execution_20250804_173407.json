@@ -1,1 +1,0 @@
-{"timestamp": "2025-08-04T12:04:07.255699Z", "message": "2025-08-04T17:34:07.255699 [PowerShell] Creating Scriptblock text: $env:USERNAME; whoami; Get-Process"}

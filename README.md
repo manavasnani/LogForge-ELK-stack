@@ -23,19 +23,19 @@ The goal of this project is to:
 # System Architecture
 ## Data Flow Overview
 This project follows a modular pipeline architecture to simulate log ingestion, enrichment, indexing, and visualization using the ELK Stack. The flow is designed to mimic real-world SIEM data processing pipelines.
-1. Log Generation
+1. Log Generation:
 Custom scripts or security event simulators generate sample log data (e.g., SSH access logs, failed logins, command execution, malware artifacts). These logs can be written to a file continuously or dumped in batch.
-2. Filebeat
+2. Filebeat:
 Filebeat acts as the lightweight log shipper agent. It monitors specific log files and forwards them to Logstash in real time. It’s configured using a filebeat.yml file which specifies input paths and output settings.
-3. Logstash
+3. Logstash:
 Logstash ingests the incoming logs and processes them using defined grok patterns and filters (configured in logstash.conf).
 It performs:
    - Field extraction (timestamp, IP, command)
    - Enrichment (e.g., adding MITRE technique tags)
    - Normalization (parsing raw log formats into structured JSON)
-4. Elasticsearch
+4. Elasticsearch:
 Logstash then forwards the structured data to Elasticsearch, which stores and indexes it for fast querying and correlation. The logs are stored in indices like logstash-*.
-5. Kibana
+5. Kibana:
 Finally, Kibana connects to Elasticsearch and offers a GUI to search logs, build dashboards, and set up alerts or visualizations. Security dashboards and MITRE-tagged events can be explored here.
 
 ## Directory Structure
